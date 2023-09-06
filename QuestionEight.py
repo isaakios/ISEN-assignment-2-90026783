@@ -24,7 +24,7 @@ def move_direction(direction, x, y):
         y += 1
     else:
         raise ValueError('Invalid direction')
+    return x,y
     print(x,y)
     
 #your code below this line ----------------------------
-move_direction("N", 6, 5)
