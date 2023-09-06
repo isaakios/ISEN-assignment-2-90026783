@@ -2,6 +2,28 @@ from QuestionEight import move_direction
 
 def test_direction():
 
+    # expecting a ValueError, learn it from this website https://pytest-with-eric.com/introduction/pytest-assert-exception/
+    try:
+        move_direction("N", 7, 5)
+    except ValueError as e:
+        assert str(e) == "Invalid x>7 expected"
+
+    try:
+        move_direction("S", 6, 7)
+    except ValueError as e:
+        assert str(e) == "Invalid y>7 expected"
+
+    try:
+        move_direction("N", 0, 5)
+    except ValueError as e:
+        assert str(e) == "Invalid x<0 expected"
+
+    try:
+        move_direction("N", 6, 0)
+    except ValueError as e:
+        assert str(e) == "Invalid y<0 expected"
+    # all directions
+    
     actual = move_direction("N", 2, 5)
     assert actual == (2, 4) , "check N"
 
@@ -25,7 +47,7 @@ def test_direction():
     
     actual = move_direction("SW", 2 , 5)
     assert actual == (1, 6), "check SW"
-    
+
     print("test passed")
 
 test_direction()
