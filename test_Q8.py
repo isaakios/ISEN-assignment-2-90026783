@@ -3,24 +3,24 @@ from QuestionEight import move_direction
 def test_invalid_position():
     # expecting a ValueError, learn it from this website https://pytest-with-eric.com/introduction/pytest-assert-exception/
     try:
-        move_direction("N", 7, 5)
+        move_direction("N", 8, 5)
     except ValueError as e:
-        assert str(e) == "Invalid x>7 expected"
+        assert str(e) == "Invalid position"
 
     try:
-        move_direction("S", 6, 7)
+        move_direction("S", 6, 8)
     except ValueError as e:
-        assert str(e) == "Invalid y>7 expected"
+        assert str(e) == "Invalid position"
 
     try:
-        move_direction("N", 0, 5)
+        move_direction("N", -1, 5)
     except ValueError as e:
-        assert str(e) == "Invalid x<0 expected"
+        assert str(e) == "Invalid position"
 
     try:
-        move_direction("N", 6, 0)
+        move_direction("N", 6, -1)
     except ValueError as e:
-        assert str(e) == "Invalid y<0 expected"
+        assert str(e) == "Invalid position"
 
     print("test invalid direction passed")
 
