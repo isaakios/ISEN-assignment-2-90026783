@@ -14,19 +14,15 @@ def check_operation(operation):
     return operation
 
 def add(num_one, num_two):
-    """Add two numbers."""
     return num_one + num_two
 
 def subtract(num_one, num_two):
-    """Subtract num_two from num_one."""
     return num_one - num_two
 
 def multiply(num_one, num_two):
-    """Multiply two numbers."""
     return num_one * num_two
 
 def divide(num_one, num_two):
-    """Divide num_one by num_two."""
     if num_two == 0:
         raise ValueError("Division by zero is not allowed")
     return num_one / num_two
